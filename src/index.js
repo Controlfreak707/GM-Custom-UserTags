@@ -1,5 +1,9 @@
 /*import { name, version } from "../goosemodModule.json";
 
+import { showToast } from "@goosemod";
+import { debug } from "@goosemod/logger";
+import settingsPage from "@goosemod/settings";
+
 let settings = {
   null: true,
 };
@@ -24,14 +28,14 @@ function updateSetting(setting, value = settings[setting]) {
         break;
 
       default:
-        goosemodScope.showToast(`Setting "${setting}" not found.`, {
+        showToast(`Setting "${setting}" not found.`, {
           type: "error",
         });
         break;
     }
   } catch (error) {
-    goosemodScope.logger.debug(name, error);
-    goosemodScope.showToast(
+    debug(name, error);
+    showToast(
       `Failed to set setting "${setting}" to "${value}".`,
       {
         type: "error",
@@ -57,7 +61,7 @@ export default {
 
       /*updateSettings();
 
-      goosemodScope.settings.createItem(name, [
+      settingsPage.createItem(name, [
         `(v${version})`,
         {
           type: "header",
@@ -82,7 +86,7 @@ export default {
     },*/
 
     onRemove: async () => {
-      /*goosemodScope.settings.removeItem(name);
+      /*settingsPage.removeItem(name);
       updateSettings(false);*/
       style.remove();
     },

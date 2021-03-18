@@ -1,6 +1,6 @@
 /*import { name, version } from "../goosemodModule.json";
 
-import { showToast } from "@goosemod";
+import showToast from "@goosemod/toast";
 import { debug } from "@goosemod/logger";
 import settingsPage from "@goosemod/settings";
 
